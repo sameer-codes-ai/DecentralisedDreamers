@@ -3,6 +3,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.*;
+import java.io.*;
 
 public class FlappyBird2 extends JPanel implements ActionListener, KeyListener {
     int boardWidth = 360;
@@ -365,7 +366,11 @@ public class FlappyBird2 extends JPanel implements ActionListener, KeyListener {
                 pipes.clear();
                 gameOver = false;
                 score = 0;
-                totalScore = 0;  // Reset total score
+                try{
+                FileWriter out= new FileWriter("C:/Users/samee/FlappyBird/score.txt",true);
+                out.append(String.valueOf(totalScore)+"\n");
+                out.close();}catch(Exception ex){System.out.println("File save failed");}
+                //totalScore = 0;  // Reset total score
                 level = 1;
                 backgroundFade = 0.0f;
                 gameLoop.start();
