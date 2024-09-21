@@ -3,6 +3,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.*;
+import java.io.*;
 
 public class FlappyBird extends JPanel implements ActionListener, KeyListener {
     int boardWidth = 360;
@@ -199,7 +200,11 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
                 velocityY = 0;
                 pipes.clear();
                 gameOver = false;
-                score = 0;
+		    try{
+                FileWriter out= new FileWriter("C:/Users/samee/FlappyBird/score.txt");
+                out.write(String.valueOf(score));
+                out.close();}catch(Exception ex){System.out.println("File save failed");}
+                //score = 0; // -> not resetting score so that user can start from the same score where he encountered gameOver previously
                 gameLoop.start();
                 placePipeTimer.start();
             }
