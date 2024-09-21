@@ -12,7 +12,7 @@ public class App {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        FlappyBird flappyBird = new FlappyBird();
+        FlappyBird2 flappyBird = new FlappyBird2();
         frame.add(flappyBird);
         frame.pack();
         flappyBird.requestFocus();
