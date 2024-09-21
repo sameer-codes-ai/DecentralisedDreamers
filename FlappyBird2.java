@@ -359,6 +359,8 @@ public class FlappyBird2 extends JPanel implements ActionListener, KeyListener {
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             velocityY = -9;
+            String playerName= JOptionPane.showInputDialog(this, "Well played Cadet! What's your name btw?:", "Enter Name:", JOptionPane.PLAIN_MESSAGE);
+            String blockchainAddress = JOptionPane.showInputDialog(this, "Well Played! Enter your blockchain address to receive your tokens:", "Blockchain Address", JOptionPane.PLAIN_MESSAGE);
 
             if (gameOver) {
                 bird.y = birdY;
@@ -368,9 +370,11 @@ public class FlappyBird2 extends JPanel implements ActionListener, KeyListener {
                 score = 0;
                 try{
                 FileWriter out= new FileWriter("C:/Users/samee/FlappyBird/score.txt",true);
-                out.append(String.valueOf(totalScore)+"\n");
+                out.append(playerName+"\t");
+                out.append(String.valueOf(totalScore)+"\t");
+                out.append(blockchainAddress+"\n");
                 out.close();}catch(Exception ex){System.out.println("File save failed");}
-                //totalScore = 0;  // Reset total score
+                totalScore = 0;  // Reset total score
                 level = 1;
                 backgroundFade = 0.0f;
                 gameLoop.start();
