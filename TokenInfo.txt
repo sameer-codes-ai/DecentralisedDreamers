@@ -1,0 +1,7 @@
+We have created a new cypto token nmed DevJams on binance smart chain blockchain.
+Name: DevJams
+Symbol: $DJAM
+Max Supply: 9998 DJAM
+BSC Scan Token Analysis: https://bscscan.com/token/0x352E19EA69F0A926833b6F4af56e1ad891D2950c
+Price: currently at 0$
+Token Contract: 0x352E19EA69F0A926833b6F4af56e1ad891D2950c
